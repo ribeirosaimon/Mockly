@@ -1,0 +1,5 @@
+[
+  { "name": "hello", "method": "GET", "path": "/hello" },
+  { "name": "hello-teste", "method": "GET", "path": "/hello-teste" },
+  { "name": "goodbye", "method": "POST", "path": "/goodbye" }
+]
