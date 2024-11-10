@@ -20,7 +20,7 @@ func RedisWithUrl(url string) RedisOption {
 	}
 }
 
-type RConnInterface interface {
+type Redis interface {
 	GetConnection() *redis.Client
 }
 

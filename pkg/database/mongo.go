@@ -10,9 +10,8 @@ import (
 )
 
 var (
-	onceMongo       sync.Once
-	mongoConn       mongoConnection
-	mongoDefaultUrl = "mongodb://localhost:27017"
+	onceMongo sync.Once
+	mongoConn mongoConnection
 )
 
 type Mongo interface {
@@ -33,17 +32,25 @@ func WithDatabase(db string) MongoOption {
 		a.database = db
 	}
 }
-
-func NewConnMongo(opts ...MongoOption) *mongoConnection {
-	ctx := context.Background()
-	mongoConn = mongoConnection{
-		url: mongoDefaultUrl,
-	}
-	mongoConn.conn(ctx)
-
+func NewMongo(opts ...MongoOption) {
+	mongoConn = mongoConnection{}
 	for _, opt := range opts {
 		opt(&mongoConn)
 	}
+	newConnMongo()
+}
+
+func GetMongoConnection() Mongo {
+	if mongoConn.mongo == nil {
+		return nil
+	}
+	return &mongoConn
+}
+
+func newConnMongo() *mongoConnection {
+	ctx := context.Background()
+
+	mongoConn.conn(ctx)
 	if mongoConn.database == "" {
 		panic("Need to set DATABASE")
 	}

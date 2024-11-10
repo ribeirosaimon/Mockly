@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ribeirosaimon/Mockly/internal/config/server"
+	"github.com/ribeirosaimon/Mockly/pkg/server"
 )
 
 func TestE2E(t *testing.T) {

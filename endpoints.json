@@ -1,5 +1,6 @@
 [
-  { "name": "hello", "method": "GET", "path": "/hello" },
-  { "name": "hello-teste", "method": "GET", "path": "/hello-teste" },
-  { "name": "goodbye", "method": "POST", "path": "/goodbye" }
+  { "_id": "aae2e087-c68e-4b7d-867b-9d2461a70039","name": "hello", "method": "GET", "path": "/hello", "response": "33a41142-98a5-4a79-8ee2-7090d715d807" },
+  { "_id": "21b07a58-657e-46a3-8bfe-001477b2289d","name": "ping", "method": "POST", "path": "/ping", "response": "374534bc-7ef5-4619-a3aa-d71d1b92c419" }
 ]
+
+
